@@ -3,16 +3,24 @@
 
 import itertools as it
 
-def checkNP(colors, graph, verts):
-    pass
+def checkNP(graph, colors):
+    for x in graph:
+        for y in graph[x]:
+            if colors[x] == colors[y]:
+                return False
+    return True
 
 def generatePossible(colors, graph, verts):
-    clauses = list(it.product(colors, repeat=len(graph)))
-    is_NP = False
+    print(verts)
+    clauses = list(it.product(colors, repeat=len(verts)))
     for x in range(len(clauses)):
-        is_NP = checkNP(graph, clauses[x], verts)
+        colors = {}
+        for y in range(len(clauses[x])):
+            colors[verts[y]] = clauses[x][y]
+        is_NP = checkNP(graph, colors)
         if is_NP:
-            break
+            return True
+    return False 
 
 def main():
     i = int(input())
@@ -22,14 +30,16 @@ def main():
         temp = input().split()
         verticies[temp[0]] = temp[1:]
         v.append(temp[0])
-    numColors = 1
+    numColors = 0
     solved = False
     while not solved and numColors < len(verticies):
+        numColors += 1
         colors = []
         for x in range(numColors):
             colors.append(x)
         solved = generatePossible(colors, verticies, v)
-        numColors += 1
+    print(numColors)
+    
 
 if __name__ == "__main__":
     main()
