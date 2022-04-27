@@ -43,6 +43,7 @@ def main():
     while not solved and numColors < len(verticies):
         numColors += 1
         colors = []
+        # create array of colors
         for x in range(numColors):
             colors.append(x)
         solved = generatePossible(colors, verticies, v)
