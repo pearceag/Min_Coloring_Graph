@@ -23,8 +23,8 @@ def generatePossible(colors, graph, verts):
         # if it works we are done
         is_NP = checkNP(graph, colors)
         if is_NP:
-            return True
-    return False 
+            return True, colors
+    return False, {}
 
 def main():
     i = int(input())
@@ -46,7 +46,9 @@ def main():
         # create array of colors
         for x in range(numColors):
             colors.append(x)
-        solved = generatePossible(colors, verticies, v)
+        solved, colors = generatePossible(colors, verticies, v)
+    for color in colors:
+        print("Vertex " + str(color), "---> Color " + str(colors[color]))
     print("Minimum number of colors:", numColors)
     
 
