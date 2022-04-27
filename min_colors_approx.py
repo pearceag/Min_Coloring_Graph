@@ -16,11 +16,11 @@ def find_approx_min_coloring(graph, v):
  
  
     # A temporary array to store the available colors.
-    # True value of available[cr] would mean that the
-    # color cr is assigned to one of its adjacent vertices
+    # True value of available_colors[color] would mean that the
+    # color is assigned to one of its adjacent vertices
     available_colors = [False] * v
  
-    # Assign colors to remaining V-1 vertices
+    # Assign colors to remaining vertices
     for u in range(1, v):
          
         # Process all adjacent vertices and
