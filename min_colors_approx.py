@@ -56,8 +56,10 @@ def main():
     for _ in range(i):
         temp = input().split()
         for i in temp[1:]:
-            graph[int(temp[0])].append(int(i)) 
-            graph[int(i)].append(int(temp[0]))
+            if int(i) not in graph[int(temp[0])]:
+                graph[int(temp[0])].append(int(i))
+            if int(temp[0]) not in graph[int(i)]:
+                graph[int(i)].append(int(temp[0]))
         v.append(temp[0])
     find_approx_min_coloring(graph, len(v))
 
