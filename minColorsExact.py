@@ -11,7 +11,6 @@ def checkNP(graph, colors):
     return True
 
 def generatePossible(colors, graph, verts):
-    print(verts)
     clauses = list(it.product(colors, repeat=len(verts)))
     for x in range(len(clauses)):
         colors = {}
@@ -38,7 +37,7 @@ def main():
         for x in range(numColors):
             colors.append(x)
         solved = generatePossible(colors, verticies, v)
-    print(numColors)
+    print("Minimum number of colors:", numColors)
     
 
 if __name__ == "__main__":
