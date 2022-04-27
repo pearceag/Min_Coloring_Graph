@@ -1,0 +1,12 @@
+Vertex 1 ---> Color 0
+Vertex 2 ---> Color 1
+Vertex 3 ---> Color 2
+Vertex 4 ---> Color 3
+Vertex 5 ---> Color 4
+Vertex 6 ---> Color 5
+Vertex 7 ---> Color 6
+Vertex 8 ---> Color 1
+Vertex 9 ---> Color 0
+Vertex 10 ---> Color 2
+Minimum number of colors: 7
+python3 min_colors_exact.py < long_in.txt  164.19s user 40.42s system 97% cpu 3:30.53 total

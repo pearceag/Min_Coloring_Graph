@@ -14,12 +14,12 @@ def checkNP(graph, colors):
 
 def generatePossible(colors, graph, verts):
     # generate clauses 
-    clauses = list(it.product(colors, repeat=len(verts)))
-    for x in range(len(clauses)):
+    clauses = it.product(colors, repeat=len(verts))
+    for x in clauses:
         colors = {}
-        for y in range(len(clauses[x])):
+        for y in range(len(x)):
             # save clause in dictionary with corresponding color
-            colors[verts[y]] = clauses[x][y]
+            colors[verts[y]] = x[y]
         # if it works we are done
         is_NP = checkNP(graph, colors)
         if is_NP:
