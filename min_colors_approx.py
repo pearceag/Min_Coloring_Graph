@@ -6,6 +6,7 @@ Citations:
     https://www.geeksforgeeks.org/graph-coloring-set-2-greedy-algorithm/ 
     https://en.wikipedia.org/wiki/Greedy_coloring 
     https://en.wikipedia.org/wiki/Graph_coloring#Polynomial_time
+    
 '''
 
 def find_approx_min_coloring(graph, v):
@@ -47,7 +48,8 @@ def find_approx_min_coloring(graph, v):
     # Print the result
     for u in range(v):
         print("Vertex", u, " --->  Color", result[u])
-    print("Minimum number of colors:", color + 1) # Minimum colors would be equal to the last color assignment + 1
+    result.sort()
+    print("Minimum number of colors:", result[-1] + 1) # Minimum colors would be equal to the hightest color assignment + 1
 
 def main():
     i = int(input())
