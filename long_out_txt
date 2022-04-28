@@ -8,5 +8,9 @@ Vertex 7 ---> Color 6
 Vertex 8 ---> Color 1
 Vertex 9 ---> Color 0
 Vertex 10 ---> Color 2
+Vertex 11 ---> Color 3
+Vertex 12 ---> Color 0
 Minimum number of colors: 7
-python3 min_colors_exact.py < long_in.txt  164.19s user 40.42s system 97% cpu 3:30.53 total
+python3 min_colors_exact.py < long_in.txt  4830.70s user 16.48s system 99% cpu 1:21:16.34 total
+
+Took about 80 minutes to complete or an hour and 20 minutes 
