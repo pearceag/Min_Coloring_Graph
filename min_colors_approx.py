@@ -1,6 +1,10 @@
 import sys
+import time
 '''
 Author: Lexie Pearce
+
+Program Type: Greedy
+Time Complexity: O(n^2)
 
 Citations: 
     https://www.geeksforgeeks.org/graph-coloring-set-2-greedy-algorithm/ 
