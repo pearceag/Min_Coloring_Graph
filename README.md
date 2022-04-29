@@ -19,7 +19,7 @@ in terminal run:
         where sample_in.txt is the test file 
     for approximation: min_colors_approx.py<sample_in.txt
 
-expeted output can be found in file with the same name as the input but with _out instead of _in:
+Expected Output:found in file with the same name as the input but with _out instead of _in:
     sample_out.txt
 
-Min Coloring Graph - The Graph Coloring decision problem is np-complete, asking for existence of a coloring with less than 'q' colors, as given a coloring , it can be easily checked in polynomial time, whether or not it uses less than 'q' colors
+Min Coloring Graph: The Graph Coloring decision problem is np-complete, asking for existence of a coloring with less than 'q' colors, as given a coloring , it can be easily checked in polynomial time, whether or not it uses less than 'q' colors
