@@ -15,9 +15,9 @@ def main():
 
     # these values can be easily changed
     # upper bound of vertex count
-    max_vertices = 40
+    max_vertices = 30
     # initial upper bound of edge count for an undirected graph
-    max_edges = 39
+    max_edges = 29
 
     num_edges = 0
     num_vertices = 0
@@ -48,6 +48,18 @@ def main():
 
     # keeping this in for easy error checking
     print("connections:", connections)
+    graph_file = open("random_test_output.txt", "w")
+    graph_file.write(str(num_vertices) + "\n")
+    temp_str = ""
+    for i in range(num_vertices):
+        if len(connections[i]) > 0:
+            for j in connections[i]:
+                temp_str = str(j) + " "
+        else:
+            temp_str = ""
+        connected_nodes = str(i) + " " + temp_str + "\n"
+        graph_file.write(connected_nodes)
+    graph_file.close()
 
     numColors = 0
     solved = False
