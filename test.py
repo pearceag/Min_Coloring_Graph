@@ -4,7 +4,7 @@
 """
 import random
 from xmlrpc.client import MAXINT
-import min_colors_exact
+import min_colors_exact, min_colors_approx
 import time
 
 # function to run several variable-sized graph tests
@@ -48,34 +48,58 @@ def main():
 
     # keeping this in for easy error checking
     print("connections:", connections)
+
+    # create file for graph construction retention
     graph_file = open("random_test_output.txt", "w")
+
+    # write first line of input
     graph_file.write(str(num_vertices) + "\n")
     temp_str = ""
+
+    # loop over the number of vertices
     for i in range(num_vertices):
+        # if the current vertex is connected to anything else
         if len(connections[i]) > 0:
+            # make a string of its connected nodes
             for j in connections[i]:
                 temp_str = str(j) + " "
+        # otherwise it should be an empty string
         else:
             temp_str = ""
+        # format remaining input lines
         connected_nodes = str(i) + " " + temp_str + "\n"
+        # write that to the file
         graph_file.write(connected_nodes)
     graph_file.close()
 
+    # start timing approximation solution
+    approx_start = time.time()
+    # run approximation
+    min_colors_approx.find_approx_min_coloring(connections, num_vertices)
+    approx_end = time.time()
+    # print out the timings
+    print("approx solution wall clock time:", approx_end - approx_start)
+
+    # start running exact solution
     numColors = 0
     solved = False
-    start = time.time()
+    # start timing
+    exact_start = time.time()
     while not solved and numColors < len(connections):
         numColors += 1
         colors = []
         # create array of colors
         for x in range(numColors):
             colors.append(x)
+        # call the exact solution function
         solved, colors = min_colors_exact.generatePossible(colors, connections, vertex_list)
         for color in colors:
             print("Vertex " + str(color), "---> Color " + str(colors[color]))
         print("Minimum number of colors:", numColors)
-    end = time.time()
-    print("wall clock time:", end - start)
+    # end timing
+    exact_end = time.time()
+    # print out exact solution time
+    print("exact solution wall clock time:", exact_end - exact_start)
 
 # utility to run main function
 if __name__ == "__main__":
