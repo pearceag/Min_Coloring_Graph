@@ -46,9 +46,6 @@ def main():
             connections[node1].append(node2)
             connections[node2].append(node1)
 
-    # keeping this in for easy error checking
-    print("connections:", connections)
-
     # create file for graph construction retention
     graph_file = open("random_test_output.txt", "w")
 
