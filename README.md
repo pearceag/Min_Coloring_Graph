@@ -18,6 +18,7 @@ in terminal run:
     for exact code: python3 min_colors_exact.py<sample_in.txt
         where sample_in.txt is the test file 
     for approximation: min_colors_approx.py<sample_in.txt
+    
 for random test generation:
     run the test.py function (it runs both approx and exact)
 
