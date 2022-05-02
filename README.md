@@ -18,6 +18,8 @@ in terminal run:
     for exact code: python3 min_colors_exact.py<sample_in.txt
         where sample_in.txt is the test file 
     for approximation: min_colors_approx.py<sample_in.txt
+for random test generation:
+    run the test.py function (it runs both approx and exact)
 
 Expected Output:found in file with the same name as the input but with _out instead of _in:
     sample_out.txt
